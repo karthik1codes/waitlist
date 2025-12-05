@@ -43,7 +43,14 @@ const GibsonLayout = ({ showForm = false }) => {
             <LogoIcon />
             <span className="gibson-logo-text">Brightwords</span>
           </div>
-          <a href="#learn-more" className="gibson-learn-more">
+          <a 
+            href="/learn-more" 
+            className="gibson-learn-more"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/learn-more');
+            }}
+          >
             Learn more →
           </a>
         </div>
