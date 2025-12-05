@@ -1,8 +1,10 @@
 import React, { memo, useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './WaitlistForm.css';
 import { submitToSupabase, checkEmailExists } from '../services/supabase';
 
 const WaitlistForm = memo(() => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -128,6 +130,11 @@ const WaitlistForm = memo(() => {
         schoolName: '',
         schoolAddress: ''
       });
+
+      // Redirect to home page after 2 seconds
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
     } catch (error) {
       setSubmitStatus('error');
       setErrorMessage(error.message || 'Failed to submit. Please try again.');

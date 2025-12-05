@@ -1,16 +1,22 @@
 import React, { memo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './GibsonLayout.css';
 import LogoIcon from './LogoIcon';
 import TermsModal from './TermsModal';
 import ContentPolicyModal from './ContentPolicyModal';
 
-const GibsonLayout = ({ children }) => {
+const GibsonLayout = ({ showForm = false }) => {
   const [showTerms, setShowTerms] = useState(false);
   const [showContentPolicy, setShowContentPolicy] = useState(false);
+  const navigate = useNavigate();
+
+  const handleInterestedClick = () => {
+    navigate('/form');
+  };
 
   return (
     <div className="gibson-container">
-      <div className="gibson-left">
+      <div className="gibson-main">
         <div className="gibson-header">
           <div className="gibson-logo">
             <LogoIcon />
@@ -28,6 +34,15 @@ const GibsonLayout = ({ children }) => {
           <p className="gibson-description">
             We're excited to work with you. We'll be back in touch as soon as possible!
           </p>
+          
+          {!showForm && (
+            <button 
+              onClick={handleInterestedClick}
+              className="gibson-interested-button"
+            >
+              Click if interested
+            </button>
+          )}
         </div>
 
         <div className="gibson-footer">
@@ -66,12 +81,6 @@ const GibsonLayout = ({ children }) => {
               />
             </svg>
           </a>
-        </div>
-      </div>
-
-      <div className="gibson-right">
-        <div className="gibson-form-wrapper">
-          {children}
         </div>
       </div>
 

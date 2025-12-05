@@ -1,19 +1,19 @@
-import React, { memo, lazy, Suspense } from 'react';
+import React, { memo } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import GibsonLayout from './components/GibsonLayout';
-
-// Lazy load the form component for code splitting
-const WaitlistForm = lazy(() => import('./components/WaitlistForm'));
+import HomePage from './pages/HomePage';
+import FormPage from './pages/FormPage';
 
 const App = memo(() => {
   return (
-    <div className="App">
-      <GibsonLayout>
-        <Suspense fallback={<div className="loading-spinner" />}>
-          <WaitlistForm />
-        </Suspense>
-      </GibsonLayout>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/form" element={<FormPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 });
 

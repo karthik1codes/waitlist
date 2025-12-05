@@ -98,7 +98,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #2563eb;
+  background-color: #000000;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -108,7 +108,7 @@
 }
 
 .submit-button:hover:not(:disabled) {
-  background-color: #1d4ed8;
+  background-color: #1a1a1a;
   transform: translateY(-1px);
 }
 
