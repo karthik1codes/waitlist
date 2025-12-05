@@ -28,7 +28,8 @@ export const submitToSupabase = async (formData) => {
         disability: formData.disability || null,
         cognitive_issue: formData.cognitiveIssue || null,
         school_name: formData.schoolName || null,
-        school_address: formData.schoolAddress || null
+        school_address: formData.schoolAddress || null,
+        expectations: formData.expectations || null
       })
     });
 

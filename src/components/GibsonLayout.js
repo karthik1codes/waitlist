@@ -4,6 +4,7 @@ import './GibsonLayout.css';
 import LogoIcon from './LogoIcon';
 import TermsModal from './TermsModal';
 import ContentPolicyModal from './ContentPolicyModal';
+import ImageCarousel from './ImageCarousel';
 
 const GibsonLayout = ({ showForm = false }) => {
   const [showTerms, setShowTerms] = useState(false);
@@ -13,6 +14,26 @@ const GibsonLayout = ({ showForm = false }) => {
   const handleInterestedClick = () => {
     navigate('/form');
   };
+
+  // Image carousel data - Images should be placed in public/images/
+  const carouselImages = [
+    {
+      src: process.env.PUBLIC_URL + '/images/carousel-1.png',
+      alt: 'BrightWords Learning Platform'
+    },
+    {
+      src: process.env.PUBLIC_URL + '/images/carousel-2.png',
+      alt: 'AWS AugmentAbility Features'
+    },
+    {
+      src: process.env.PUBLIC_URL + '/images/carousel-3.png',
+      alt: 'Sign Language Learning Plans'
+    },
+    {
+      src: process.env.PUBLIC_URL + '/images/carousel-4.png',
+      alt: 'Team Plans and Pricing'
+    }
+  ];
 
   return (
     <div className="gibson-container">
@@ -43,6 +64,10 @@ const GibsonLayout = ({ showForm = false }) => {
               Click if interested
             </button>
           )}
+
+          <div className="gibson-carousel-wrapper">
+            <ImageCarousel images={carouselImages} interval={3000} />
+          </div>
         </div>
 
         <div className="gibson-footer">

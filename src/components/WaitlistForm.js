@@ -12,7 +12,8 @@ const WaitlistForm = memo(() => {
     disability: '',
     cognitiveIssue: '',
     schoolName: '',
-    schoolAddress: ''
+    schoolAddress: '',
+    expectations: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -128,7 +129,8 @@ const WaitlistForm = memo(() => {
         disability: '',
         cognitiveIssue: '',
         schoolName: '',
-        schoolAddress: ''
+        schoolAddress: '',
+        expectations: ''
       });
 
       // Redirect to home page after 2 seconds
@@ -252,6 +254,18 @@ const WaitlistForm = memo(() => {
             />
           </div>
         )}
+
+        <div className="form-group">
+          <label className="form-label">What do you expect us to have and what can we include?</label>
+          <textarea
+            name="expectations"
+            value={formData.expectations}
+            onChange={handleChange}
+            className="form-input form-textarea"
+            placeholder="Share your expectations and suggestions..."
+            rows="4"
+          />
+        </div>
         
         <button 
           type="submit" 

@@ -6,7 +6,8 @@ ADD COLUMN IF NOT EXISTS usage_type VARCHAR(50), -- 'personal' or 'school'
 ADD COLUMN IF NOT EXISTS disability VARCHAR(50), -- stores disability type
 ADD COLUMN IF NOT EXISTS cognitive_issue TEXT, -- stores cognitive issue details if applicable
 ADD COLUMN IF NOT EXISTS school_name VARCHAR(255), -- school name if usage_type is 'school'
-ADD COLUMN IF NOT EXISTS school_address TEXT; -- school address if usage_type is 'school'
+ADD COLUMN IF NOT EXISTS school_address TEXT, -- school address if usage_type is 'school'
+ADD COLUMN IF NOT EXISTS expectations TEXT; -- user expectations and suggestions
 
 -- Update the username column to be nullable (we use single name field)
 ALTER TABLE public.waitlist
