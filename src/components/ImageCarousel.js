@@ -72,8 +72,6 @@ const ImageCarousel = ({ images, interval = 3000 }) => {
         }}
       >
         {images.map((image, index) => {
-          const dims = imageDimensions[index];
-          
           return (
             <div 
               key={index} 
