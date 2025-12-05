@@ -142,7 +142,7 @@ const WaitlistForm = memo(() => {
     } finally {
       setIsSubmitting(false);
     }
-  }, [formData]);
+  }, [formData, navigate]);
 
   return (
     <div className="waitlist-form-container">
